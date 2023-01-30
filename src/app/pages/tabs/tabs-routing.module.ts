@@ -19,7 +19,18 @@ const routes: Routes = [
         path: 'tab1',
         loadChildren: () => import('../home/home.module').then(m => m.HomePageModule)
       },
-     
+     {
+      path: 'tab2',
+      loadChildren: () => import('../books/books.module').then(m => m.BooksModule)
+     },
+     {
+      path: 'tab3',
+      loadChildren: () => import('../videos/videos.module').then(m => m.VideosModule)
+     },
+     {
+      path: 'tab4',
+      loadChildren: () => import('../cart/cart.module').then(m => m.CartModule)
+     },
     
       {
         path: 'tab5',
