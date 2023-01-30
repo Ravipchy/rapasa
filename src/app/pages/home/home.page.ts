@@ -9,7 +9,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
-import { FiltersPage } from '../filters/filters.page';
+
 
 @Component({
   selector: 'app-home',
@@ -132,15 +132,7 @@ export class HomePage implements OnInit {
   ngOnInit() {
   }
 
-  async onFilter() {
-    const modal = await this.modalController.create({
-      component: FiltersPage,
-      cssClass: 'custom_modal',
-      componentProps: { value: 123 },
-    });
 
-    await modal.present();
-  }
 
   onFriendsProfile() {
     this.router.navigate(['friends-profile']);
