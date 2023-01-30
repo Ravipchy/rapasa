@@ -18,10 +18,7 @@ const routes: Routes = [
     path: 'home',
     loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule)
   },
-  {
-    path: 'chat',
-    loadChildren: () => import('./pages/chat/chat.module').then( m => m.ChatPageModule)
-  },
+
  
   {
     path: 'profile',
@@ -42,10 +39,7 @@ const routes: Routes = [
   },
 
  
-  {
-    path: 'filters',
-    loadChildren: () => import('./pages/filters/filters.module').then( m => m.FiltersPageModule)
-  },
+
   {
     path: 'friends-profile',
     loadChildren: () => import('./pages/friends-profile/friends-profile.module').then( m => m.FriendsProfilePageModule)
