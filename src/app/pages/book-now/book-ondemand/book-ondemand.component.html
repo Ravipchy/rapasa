@@ -1,0 +1,283 @@
+<app-header headerTitle="Book Ondemand" [isMenuVisible]="false" routerLink="/book-now"></app-header>
+<div overflow-scroll="true" class="ion-padding">
+  <!-- <img src="./assets/img/ondemand-booking.svg" alt="" />
+  <h4 class="m-0 font-bold text-center">Place Your Ondemand Booking</h4> -->
+
+  <div overflow-scroll="true">
+    <form [formGroup]="ondemandForm">
+      <ion-segment value="1" mode="md" [(ngModel)]="current" formControlName="formSelect" >
+        <ion-segment-button value="1" (click)="formSwitch('1')">
+          <ion-label>Incity </ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="2" (click)="formSwitch('2')">
+          <ion-label>Outstation</ion-label>
+        </ion-segment-button>
+      </ion-segment>
+      <div class="bg-ondemand	p-1" *ngIf="current === '1'">
+
+        <ion-list>
+          <ion-item class="text-[14px] border-solid border-2 rounded mb-4">
+            <ion-select name="travelType" formControlName="travelType" placeholder="Select Travel Type" class="w-full">
+              <ion-select-option *ngFor="let travelType of travelType" [value]="travelType">
+                {{travelType.name}}
+              </ion-select-option>
+            </ion-select>
+          </ion-item>
+          <span class="error ion-padding text-rose-700" *ngIf="isSubmitted && errorControl.travelType.errors?.required">
+            Travel Type is required.
+          </span>
+
+          <ion-item class="text-[14px] border-solid border-2 rounded mb-4">
+            <ion-select formControlName="selectAddress" placeholder="Select Address" class="w-full">
+              <ion-select-option *ngFor="let selectAddress of selectAddress" [value]="selectAddress">
+                {{selectAddress.name}}
+              </ion-select-option>
+            </ion-select>
+          </ion-item>
+          <span class="error ion-padding text-rose-700"
+            *ngIf="isSubmitted && errorControl.selectAddress.errors?.required">
+            Select Address is required.
+          </span>
+
+          <ion-item class="text-[14px] border-solid border-2 rounded mb-4">
+            <ion-input placeholder="Drop Location" formControlName="dropLocation"></ion-input>
+          </ion-item>
+          <span class="error ion-padding text-rose-700"
+            *ngIf="isSubmitted && errorControl.dropLocation.errors?.required">
+            Drop Location is required.
+          </span>
+
+          <ion-item class="text-[14px] border-solid border-2 rounded mb-2">
+            <ion-select formControlName="carType" placeholder="Select Car Type" class="w-full">
+              <ion-select-option *ngFor="let carType of carType" [value]="carType">
+                {{carType.name}}
+              </ion-select-option>
+            </ion-select>
+          </ion-item>
+          <span class="error ion-padding text-rose-700" *ngIf="isSubmitted && errorControl.carType.errors?.required">
+            Car Type is required.
+          </span>
+
+          <ion-list>
+            <ion-item class="text-[14px] border-solid border-2 rounded ">
+              <ion-label>From Date</ion-label>
+              <ion-input (ionChange)="getdate($event)" formControlName="fromDate" [value]="dateExample" type="date">
+              </ion-input>
+            </ion-item>
+            <span class="error ion-padding text-rose-700" *ngIf="isSubmitted && errorControl.fromDate.errors?.required">
+              From Date is required.
+            </span>
+          </ion-list>
+
+          <ion-list>
+            <ion-item class="text-[14px] border-solid border-2 rounded">
+              <ion-label>To Date</ion-label>
+              <ion-input (ionChange)="getDate($event)" formControlName="toDate" [value]="defaultDate" type="date">
+              </ion-input>
+            </ion-item>
+            <span class="error ion-padding text-rose-700" *ngIf="isSubmitted && errorControl.toDate.errors?.required">
+              To Date is required.
+            </span>
+          </ion-list>
+
+          <ion-list>
+            <ion-item class="text-[14px] border-solid border-2 rounded mb-2">
+              <ion-label>Reporting Time :</ion-label>
+              <ion-input class="" locale="en-GB-u-hc-h12" type="time" placeholder="Reporting Time"
+                formControlName="Reportingtime"></ion-input>
+            </ion-item>
+            <ion-popover trigger="open-popover3" cssClass="width-80">
+              <ng-template>
+                <ion-datetime presentation="time" [(ngModel)]="dateExample" size="cover"></ion-datetime>
+              </ng-template>
+            </ion-popover>
+          </ion-list>
+
+          <ion-item class="text-[14px] border-solid border-2 rounded mb-4">
+            <ion-select formControlName="dutyHour" placeholder="Duty Hour" class="w-full">
+              <ion-select-option *ngFor="let dutyHour of dutyHour" [value]="dutyHour">
+                {{dutyHour.name}}
+              </ion-select-option>
+            </ion-select>
+          </ion-item>
+          <span class="error ion-padding text-rose-700" *ngIf="isSubmitted && errorControl.dutyHour.errors?.required">
+            Duty Hour is required.
+          </span>
+
+          <ion-item class="w-full border-2 mb-4 ">
+            <button expand="block" (click)="goToApplyCoupon('INCITY')" class="bg-white text-black w-full text-[14px] rounded-md text-left">
+              {{offerData.offerName?offerData.offerName:'APPLY COUPON'}}
+            </button>
+          </ion-item>
+
+          <div class="flex border-2 flex-row mb-20">
+            <ion-item class="text-[14px] w-[70%] ">
+              <p class="text-black front-bold "> Total Rewards</p>
+            </ion-item>
+            <ion-item class="text-[14px] border-l-4 text-end border-black  w-[30%]">
+              <p class="text-rose-700 font-bold ">425</p>
+            </ion-item>
+          </div>
+
+          <div class="flex border-2 flex-row mb-20">
+            <ion-item class="text-[14px] w-[70%]">
+              <p class="text-black font-bold ">Total Charges</p>
+            </ion-item>
+            <ion-item class="text-[14px] border-l-4 text-end border-black  w-[30%]">
+              <p class="text-rose-700 font-bold ">1020/-</p>
+            </ion-item>
+          </div>
+          <div>
+            <ion-button type="submit" expand="block" (click)="goToBook()" class="btn_1">
+              <span class="material-icons mr-2">check_circle</span>
+              BOOK
+            </ion-button>
+          </div>
+          <div class="flex">
+            <button type="submit" class="w-full my-2 bg-inqury mr-1" (click)="goToInquiry()">
+              <span class="material-icons mr-2 align-middle">info</span>
+              <label class="align-middle">INQUIRY</label>
+            </button>
+            <button type="submit" class="w-full my-2 bg-button ml-1" (click)="goToTariff()">
+              <span class="material-icons mr-2 align-middle">currency_rupee</span>
+              <label class="align-middle">TARRIF</label>
+            </button>
+          </div>
+
+        </ion-list>
+      </div>
+      <div class="bg-ondemand	p-1" *ngIf="current === '2'">
+        <ion-list>
+          <ion-item class="text-[14px] border-solid border-2 rounded mb-4">
+            <ion-select name="travelType" formControlName="travelType" placeholder="Select Travel Type" class="w-full">
+              <ion-select-option *ngFor="let travelType of travelType" [value]="travelType">
+                {{travelType.name}}
+              </ion-select-option>
+            </ion-select>
+          </ion-item>
+          <span class="error ion-padding text-rose-700" *ngIf="isSubmitted && errorControl.travelType.errors?.required">
+            Travel Type is required.
+          </span>
+
+          <ion-item class="text-[14px] border-solid border-2 rounded mb-4">
+            <ion-select formControlName="selectAddress" placeholder="Select Address" class="w-full">
+              <ion-select-option *ngFor="let selectAddress of selectAddress" [value]="selectAddress">
+                {{selectAddress.name}}
+              </ion-select-option>
+            </ion-select>
+          </ion-item>
+          <span class="error ion-padding text-rose-700"
+            *ngIf="isSubmitted && errorControl.selectAddress.errors?.required">
+            Select Address is required.
+          </span>
+
+          <ion-item class="text-[14px] border-solid border-2 rounded mb-4">
+            <ion-input placeholder="Drop Location" formControlName="dropLocation"></ion-input>
+          </ion-item>
+          <span class="error ion-padding text-rose-700"
+            *ngIf="isSubmitted && errorControl.dropLocation.errors?.required">
+            Drop Location is required.
+          </span>
+
+          <ion-item class="text-[14px] border-solid border-2 rounded mb-2">
+            <ion-select formControlName="carType" placeholder="Select Car Type" class="w-full">
+              <ion-select-option *ngFor="let carType of carType" [value]="carType">
+                {{carType.name}}
+              </ion-select-option>
+            </ion-select>
+          </ion-item>
+          <span class="error ion-padding text-rose-700" *ngIf="isSubmitted && errorControl.carType.errors?.required">
+            Car Type is required.
+          </span>
+
+          <ion-list>
+            <ion-item class="text-[14px] border-solid border-2 rounded">
+              <ion-label>From Date</ion-label>
+              <ion-input (ionChange)="getdate($event)" formControlName="fromDate" [value]="dateExample" type="date">
+              </ion-input>
+            </ion-item>
+            <span class="error ion-padding text-rose-700" *ngIf="isSubmitted && errorControl.fromDate.errors?.required">
+              From Date is required.
+            </span>
+          </ion-list>
+
+          <ion-list>
+            <ion-item class="text-[14px] border-solid border-2 rounded">
+              <ion-label>To Date</ion-label>
+              <ion-input (ionChange)="getDate($event)" formControlName="toDate" [value]="defaultDate" type="date">
+              </ion-input>
+            </ion-item>
+            <span class="error ion-padding text-rose-700" *ngIf="isSubmitted && errorControl.toDate.errors?.required">
+              To Date is required.
+            </span>
+          </ion-list>
+
+          <ion-list>
+            <ion-item class="text-[14px] border-solid border-2 rounded mb-2 ">
+              <ion-label>Reporting Time :</ion-label>
+              <ion-input class="" type="time" placeholder="Reporting Time" formControlName="Reportingtime"></ion-input>
+            </ion-item>
+            <ion-popover trigger="open-popover3" cssClass="width-80">
+              <ng-template>
+                <ion-datetime presentation="time" [(ngModel)]="dateExample" size="cover"></ion-datetime>
+              </ng-template>
+            </ion-popover>
+          </ion-list>
+
+          <ion-item class="text-[14px] border-solid border-2 rounded mb-4">
+            <ion-select formControlName="dutyHour" placeholder="Duty Hour" class="w-full">
+              <ion-select-option *ngFor="let dutyHour of dutyHour" [value]="dutyHour">
+                {{dutyHour.name}}
+              </ion-select-option>
+            </ion-select>
+          </ion-item>
+          <span class="error ion-padding text-rose-700" *ngIf="isSubmitted && errorControl.dutyHour.errors?.required">
+            Duty Hour is required.
+          </span>
+
+          <ion-item class="w-full border-2 mb-4 ">
+            <button expand="block" (click)="goToApplyCoupon('OUTSTATION')" class="bg-white text-green w-full text-[14px] rounded-md text-left">
+               {{offerData.offerName?offerData.offerName:'APPLY COUPON'}}
+            </button>
+          </ion-item>
+
+          <div class="flex border-2 flex-row mb-20">
+            <ion-item class="text-[14px] w-[70%] ">
+              <p class="text-black front-bold "> Total Rewards</p>
+            </ion-item>
+            <ion-item class="text-[14px] border-l-4 text-end border-black  w-[30%]">
+              <p class="text-rose-700 font-bold ">425</p>
+            </ion-item>
+          </div>
+
+          <div class="flex border-2 flex-row mb-20">
+            <ion-item class="text-[14px] w-[70%]">
+              <p class="text-black font-bold ">Total Charges</p>
+            </ion-item>
+            <ion-item class="text-[14px] border-l-4 text-end border-black  w-[30%]">
+              <p class="text-rose-700 font-bold ">1020/-</p>
+            </ion-item>
+          </div>
+          <div>
+            <ion-button type="submit" expand="block" (click)="goToBook()" class="btn_1">
+              <span class="material-icons mr-2">check_circle</span>
+              BOOK
+            </ion-button>
+          </div>
+          <div class="flex">
+            <button type="submit" class="w-full my-2 bg-inqury mr-1" (click)="goToInquiry()">
+              <span class="material-icons mr-2 align-middle">info</span>
+              <label class="align-middle">INQUIRY</label>
+            </button>
+            <button type="submit" class="w-full my-2 bg-button ml-1" (click)="goToTariff()">
+              <span class="material-icons mr-2 align-middle">currency_rupee</span>
+              <label class="align-middle">TARRIF</label>
+            </button>
+          </div>
+
+        </ion-list>
+      </div>
+
+    </form>
+  </div>
+  <app-tab-navigator></app-tab-navigator>

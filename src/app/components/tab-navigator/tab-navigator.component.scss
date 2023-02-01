@@ -1,0 +1,11 @@
+.isActive{
+  .active{
+    display: block;
+  }
+  .stable{
+    display: none;
+  }
+}
+img.active{
+  display: none;
+}

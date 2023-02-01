@@ -1,0 +1,31 @@
+<!-- <div class="ion-padding" *ngIf="activatedRoutes.children.length === 0"> -->
+
+<div
+  class="flex items-center justify-between bg-black pl-4 pr-4 fixed z-10 bottom-0 left-0 right-0"
+>
+  <div routerLink="/dashboard" routerLinkActive="isActive">
+    <img class="active" src="./assets/icons/active-home.svg" alt="" />
+    <img class="stable" src="./assets/icons/inactive-home.svg" alt="" />
+
+  </div>
+  <!-- routerLink="/book-now" -->
+  <div routerLink="/book-now" routerLinkActive="isActive">
+    <img class="active"   src="./assets/icons/active-booknow.svg" alt="" />
+    <img class="stable" class="stable" src="./assets/icons/inactive-booknow.svg" alt="" />
+  </div>
+  <div routerLink="/booking-history" routerLinkActive="isActive">
+    <img class="active" src="./assets/icons/active-booking.svg" alt="" />
+    <img class="stable" src="./assets/icons/inactive-booking.svg" alt="" />
+
+  </div>
+  <div routerLink="/offers" routerLinkActive="isActive">
+    <img class="active" src="./assets/icons/active-offers.svg" alt="" />
+    <img class="stable" src="./assets/icons/inactive-offers.svg" alt="" />
+
+  </div>
+  <div routerLink="/profile" routerLinkActive="isActive">
+    <img class="active" src="./assets/icons/active-profile.svg" alt="" />
+    <img class="stable" src="./assets/icons/inactive-profile.svg" alt="" />
+
+  </div>
+</div>

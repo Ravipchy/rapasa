@@ -1,0 +1,47 @@
+<div class="app-sidebar fixed top-0 bottom-0 left-0 z-30 bg-white h-[100vh] w-[280px]"
+  [ngClass]="{ visible: isSidebarVisible }">
+  <div>
+    <div class="p-4">
+      <div class="flex justify-start mb-3">
+        <img src="./assets/icons/J.svg" alt="" />
+        <h2 class="p-0 mr-1">Jhon Doe.</h2>
+      </div>
+      <div class="flex flex-col">
+        <!-- <ion-button class="btn mb-2">
+          <img src="./assets/icons/discount 1.svg" class="pr-3" />
+          Rewards
+        </ion-button> -->
+        <ion-button class="btn mb-2" routerLink="/addresses">
+          <img src="./assets/icons/ri-user-location-line.svg" class="pr-3" />
+          Address
+        </ion-button>
+        <ion-button class="btn mb-2" routerLink="/book-now">
+          <img src="./assets/icons/driver (3) 1.svg" class="pr-3" />
+          Book Now
+        </ion-button>
+        <ion-button class="btn mb-2" routerLink="/booking-history">
+          <img src="./assets/icons/stamped 1.svg" class="pr-3" />
+          My Bookings
+        </ion-button>
+        <ion-button class="btn mb-2" routerLink="/offers">
+          <img src="./assets/icons/discount 1.svg" class="pr-3" />
+          Offers
+        </ion-button>
+        <ion-button class="btn mb-2" routerLink="/profile">
+          <img src="./assets/icons/ri-account-circle-line.svg" class="pr-3" />
+          Profile
+        </ion-button>
+        <ion-button class="btnmb-2" routerLink="/app-info">
+          <img src="./assets/icons/info 1.svg" class="pr-3" />
+          App Info
+        </ion-button>
+      </div>
+      <ion-button class="btn flex fixed bottom-0 left-0 right-0" routerLink="/signin">
+        <span class="material-icons mr-3">logout</span>
+        Logout
+      </ion-button>
+    </div>
+  </div>
+</div>
+<div class="app-sidebar-overlay z-20 fixed top-0 bottom-0 left-0 right-0 bg-black bg-opacity-30"
+  [ngClass]="{ visible: isSidebarVisible }" (click)="hideMenu()"></div>

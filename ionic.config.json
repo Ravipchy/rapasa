@@ -1,7 +1,8 @@
 {
-  "name": "rapasa",
-  "integrations": {
-    "capacitor": {}
-  },
-  "type": "angular"
-}
+    "name": "drivers-customer-app",
+    "integrations": {
+      "capacitor": {}
+    },
+    "type": "angular"
+  }
+  

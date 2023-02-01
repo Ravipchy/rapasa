@@ -1,0 +1,48 @@
+<app-header headerTitle="Chat with us"  [isMenuVisible]="false" routerLink="/help"></app-header>  
+<div class="ion-padding">
+
+
+
+<div class="conversation ion-padding">
+    <div class="chat-section" id="chat">
+        <div class="chat">
+
+            <div class="your messages">
+                <div class="message">
+                    Hello!  
+                </div>
+                <div class="message last">
+                    I need help with my previous ride info
+                </div>
+                <span>
+                    <ion-icon name="checkmark-done-outline"></ion-icon>1:44 PM
+                </span>
+            </div>
+            </div>
+
+            <div class="mine messages">
+                <div class="message">
+                    Hello, how can I help you?  
+                </div>
+                <div class="message last">
+                    Sir
+                </div>
+                <span>
+                    <ion-icon name="checkmark-done-outline"></ion-icon>1:44 PM
+                </span>
+            </div>
+            </div>
+
+    <div class="message-input pt-5">
+        <ion-input placeholder="type your message..."></ion-input>
+        <div class="send-button">
+            <ion-icon name="send-sharp"></ion-icon>
+        </div>
+    </div>
+    <div class="p-2 fixed top-14 left-50 right-0">
+        <ion-button class="w-full items-center" (click)="goToAddComment()">
+          <span class="material-icons mr-2">add_circle</span>
+          Add Comment
+        </ion-button>
+      </div>
+    </div>
