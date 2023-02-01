@@ -1,0 +1,14 @@
+<app-header headerTitle="Help & Support" [isMenuVisible]="false" routerLink="/help"></app-header>  
+<div class="ion-padding">
+    <ion-label position="stacked">Write to Us</ion-label>
+    <ion-item lines="none border-solid border-2 border-black rounded pt-2">
+      <ion-textarea placeholder="Add Comment"  type="text" required></ion-textarea>
+    </ion-item>
+</div> 
+
+
+<div class="submit-btn pt-2 mr-2 ml-2">
+    <ion-button type="submit" expand="block">Submit</ion-button>
+  </div>
+  <router-outlet></router-outlet>
+<app-tab-navigator></app-tab-navigator>

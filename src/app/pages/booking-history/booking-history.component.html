@@ -1,0 +1,39 @@
+<app-header headerTitle="Bookings" [isMenuVisible]="false" routerLink="/dashboard"></app-header>
+
+<div class="ion-padding"  *ngIf="currentRoute">
+  <!-- <img class="w-5/6 m-auto" src="./assets/img/Book Now.png" alt="" />
+  <ion-button (click)="goToOndemandHistory()" class="w-full mb-4">
+    <span class="material-icons mr-2">person_outline</span>
+    View Ondemand Bookings
+  </ion-button>
+  <div class="px-6 pt-3">
+    <img class="w-5/6 m-auto" src="./assets/img/undraw_booking_re_gw4j 1.png" alt="" />
+  </div>
+  <ion-button (click)="goToParmanentHistory()" class="w-full mt-4">
+    <span class="material-icons mr-2">person_outline</span>
+    View Permanent Bookings
+  </ion-button> -->
+  <div class="pt-4 flex justify-between items-center">
+    <div class="m-0">
+      <img class="m-0" src="./assets/img/Book Now.png" alt="" />
+    </div>
+    <div class="py-[25px] px-4 shadow-md border rounded-md bg-gray-700">
+      <button class="btn flex font-bold text-white justify-center pt-1" (click)="goToOndemandHistory()">
+        View Ondemand Bookings
+      </button>
+    </div>
+  </div>
+  <div class="border 5px solid black mt-5"></div>
+  <div class="pt-6 flex font-bold justify-between items-center">
+    <div>
+      <img class="w-11/12" src="./assets/img/undraw_booking_re_gw4j 1.png" alt="" />
+    </div>
+    <div class="py-[25px] px-4 shadow-md border rounded-md bg-gray-700">
+      <button class="btn flex text-white justify-center pt-1" (click)="goToParmanentHistory()">
+        View Permanent Bookings
+      </button>
+    </div>
+  </div>
+</div>
+<router-outlet></router-outlet>
+<app-tab-navigator></app-tab-navigator>

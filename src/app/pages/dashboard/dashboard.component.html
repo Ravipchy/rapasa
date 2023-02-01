@@ -1,0 +1,37 @@
+<app-header headerTitle="Welcome, Jhon!" routerLink=""></app-header>
+
+
+<div class="p-4">
+  <div>
+    <img src="./assets/img/home-bookow.svg" (click)="goToBookNow()" class="w-3/6 m-auto" alt="" />
+    <h5 class="font-bold text-center" (click)="goToBookNow()">Hire a Professional Car Driver</h5>
+    <!-- <div class="flex justify-center pt-1">
+      <ion-button class="btn w-full" (click)="goToOndemand()"> On Demand </ion-button>
+      <ion-button class="btn w-full" (click)="goToPermanent()"> Permanent </ion-button>
+    </div> -->
+  </div>
+  <!-- <div class="border 5px solid black mt-5"></div> -->
+  <!-- <div class="pt-4">
+    <h5 class="font-bold text-center pb-1">Rate Card</h5>
+    <img src="./assets/img/home-rateCard.svg" class="w-3/6 m-auto" alt="" />
+    <ion-button class="btn flex justify-center pt-1 mt-2.5">
+      View all driver rates
+    </ion-button>
+  </div> -->
+  <div class="border 5px solid black mt-5"></div>
+  <div class="pt-8">
+    <img src="./assets/img/home-gift.svg" class="w-3/6 m-auto" alt="" />
+    <h5 class="font-bold text-center pt-1">Get Rewards on your Bookings</h5>
+    <h5 class="font-medium text-center pt-1">
+      Total Rewards Earned:
+      <span class="font-extrabold text-red-600"> 455. </span>
+    </h5>
+  </div>
+  <div class="border 5px solid black mt-5"></div>
+  <div class="pt-4">
+    <img src="./assets/img/home-offers.svg" (click)="goToOffer()" class="w-3/6 m-auto" alt="" />
+    <!-- <ion-button class="flex justify-center pt-1 mt-2.5" (click)="goToOffer()">Explore Offers.</ion-button> -->
+    <h5 class="font-bold text-center pt-1">Explore Offers.</h5>
+  </div>
+</div>
+<app-tab-navigator></app-tab-navigator>

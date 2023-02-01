@@ -1,0 +1,20 @@
+<app-header headerTitle="Verify Your OTP" [isMenuVisible]="false" routerLink="/forgot-password"></app-header>
+
+<div class="ion-padding">
+  <img class="w-4/6 m-auto" src="./assets/img/undraw_authentication_re_svpt 2.png" alt="" />
+  <div class="mt-[30px]">
+    <form [formGroup]="LoginForm" (ngSubmit)="submitForm()" novalidate>
+      <div class="ml-[-10px] mr-[10px]">
+        <ion-input formControlName="otp" type="tel" minlength="6" maxlength="6" class="Input-border" placeholder="Enter your OTP ">
+        </ion-input>
+        <span class="error text-red-500 ion-padding" *ngIf="isSubmitted && errorControl.otp.errors?.required">
+          OTP Number is required.
+        </span>
+      </div>
+      <ion-button type="submit" class="w-full my-4">
+        <span class="material-icons mr-2"> check_circle </span>
+        Verify
+      </ion-button>
+    </form>
+  </div>
+</div>

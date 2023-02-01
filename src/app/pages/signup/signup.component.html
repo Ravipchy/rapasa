@@ -1,0 +1,118 @@
+<app-header headerTitle="Create an account." [isMenuVisible]="false" routerLink="/signin"></app-header>
+
+<div class="ion-padding e-font " *ngIf="activatedRoutes.children.length === 0">
+  <img src="./assets/img/undraw_best_place_re_lne9.svg" alt="" />
+  <ion-segment value="1" mode="md" [(ngModel)]="current">
+    <ion-segment-button value="1">
+      <ion-label>Individual </ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="2">
+      <ion-label>Company</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+  <div class="ml-[-10px] mr-[10px]" *ngIf="current === '1'">
+    <form [formGroup]="IndividualForm" (ngSubmit)="submit()" novalidate>
+      <ion-input formControlName="name" type="text" class="Input-border" placeholder="Name"></ion-input>
+      <span class="error text-red-500 ion-padding e-font" *ngIf="isSubmitted && errorControl.name.errors?.required">
+        Name is required.
+      </span>
+      <ion-input class="Input-border" formControlName="phoneNo" placeholder="Phone No."></ion-input>
+      <span class="error text-red-500 ion-padding e-font" *ngIf="isSubmitted && errorControl.phoneNo.errors?.required">
+        Phone no. is required.
+      </span>
+      <ion-input class="Input-border" formControlName="email" placeholder="Email Id"></ion-input>
+      <span class="error text-red-500 ion-padding e-font" *ngIf="isSubmitted && errorControl.email.errors?.required">
+        Email Id is required.
+      </span>
+      <ion-select class="Input-border w-full" formControlName="selectSource" placeholder="Select Source">
+        <ion-select-option value="apples">Friend</ion-select-option>
+        <ion-select-option value="oranges">Saw Add</ion-select-option>
+      </ion-select>
+      <span class="error text-red-500 ion-padding e-font" *ngIf="isSubmitted && errorControl.selectSource.errors?.required">
+        Select Source is required.
+      </span>
+      <ion-input type="password" class="Input-border" formControlName="password" placeholder="Password"></ion-input>
+      <span class="error text-red-500 ion-padding e-font" *ngIf="isSubmitted && errorControl.password.errors?.required">
+        Password is required.
+      </span>
+      <ion-input type="password" class="Input-border" formControlName="confirmPassword" placeholder="Confirm Password">
+      </ion-input>
+      <span class="error text-red-500 ion-padding e-font"
+        *ngIf="isSubmitted && errorControl.confirmPassword.errors?.required">
+        Confirm Password is required.
+      </span>
+      <p class="sub-title ml-2 flex">
+        <input type="checkbox" checked="true" formControlName="checkBox" class="mr-2"/>
+        I’ve read and accept
+        <span class="bg-indigo sub-title ml-1"> Terms & Conditions.</span>
+      </p>
+      <span class="error text-red-500 ion-padding e-font" *ngIf="isSubmitted && errorControl.checkBox.errors?.required">
+        Please Accept Terms & Conditions.
+      </span>
+      <ion-button type="submit" class="w-full my-4 ml-[10px]">
+        <span class="material-icons mr-2">login</span>
+        Sign Up
+      </ion-button>
+      <p class="sub-title text-center">
+        Already have an account? <span class="bg-indigo sub-title" (click)="goTologin()">Sign in</span>
+      </p>
+    </form>
+  </div>
+  <div class="ml-[-10px] mr-[10px]" *ngIf="current === '2'">
+    <form [formGroup]="IndividualForm" (ngSubmit)="book()" novalidate>
+      <ion-input formControlName="companyName" class="Input-border" placeholder="Company Name"></ion-input>
+      <span class="error text-red-500 ion-padding e-font" *ngIf="isbook && errorControl.companyName.errors?.required">
+        Company name is required.
+      </span>
+      <ion-input formControlName="gstNo" class="Input-border" placeholder="GST Number"></ion-input>
+      <span class="error text-red-500 ion-padding e-font" *ngIf="isbook && errorControl.gstNo.errors?.required">
+        GST Number is required.
+      </span>
+      <ion-input formControlName="name" class="Input-border" placeholder="Contact Person Name">
+      </ion-input>
+      <span class="error text-red-500 ion-padding e-font"
+        *ngIf="isbook && errorControl.name.errors?.required">
+        Contact Person Name is required.
+      </span>
+      <ion-input class="Input-border" formControlName="phoneNo" placeholder="Phone No."></ion-input>
+      <span class="error text-red-500 ion-padding e-font" *ngIf="isbook && errorControl.phoneNo.errors?.required">
+        Phone no. is required.
+      </span>
+      <ion-input class="Input-border" formControlName="email" placeholder="Email Id"></ion-input>
+      <span class="error text-red-500 ion-padding e-font" *ngIf="isbook && errorControl.email.errors?.required">
+        Email Id is required.
+      </span>
+      <ion-select class="Input-border w-full" formControlName="selectSource" placeholder="Select Source">
+        <ion-select-option value="apples">Friend</ion-select-option>
+        <ion-select-option value="oranges">Saw Add</ion-select-option>
+      </ion-select>
+      <span class="error text-red-500 ion-padding e-font" *ngIf="isbook && errorControl.selectSource.errors?.required">
+        Select Source is required.
+      </span>
+      <ion-input type="password" class="Input-border" formControlName="password" placeholder="Password"></ion-input>
+      <span class="error text-red-500 ion-padding e-font" *ngIf="isbook && errorControl.password.errors?.required">
+        Password is required.
+      </span>
+      <ion-input type="password" class="Input-border" formControlName="confirmPassword" placeholder="Confirm Password">
+      </ion-input>
+      <span class="error text-red-500 ion-padding e-font" *ngIf="isbook && errorControl.confirmPassword.errors?.required">
+        Confirm Password is required.
+      </span>
+      <p class="sub-title ml-2 flex">
+        <input type="checkbox"  checked="false" formControlName="checkBox" class="mr-2"/>
+        I’ve read and accept
+        <span class="bg-indigo sub-title ml-1"> Terms & Conditions.</span>
+      </p>
+      <span class="error text-red-500 ion-padding e-font" *ngIf="isbook && errorControl.checkBox.errors?.required">
+        Please Accept Terms & Conditions.
+      </span>
+      <ion-button type="submit" class="w-full my-4 ml-[10px]">
+        <span class="material-icons mr-2">login</span>
+        Sign Up
+      </ion-button>
+      <p class="sub-title text-center">
+        Already have an account? <span class="bg-indigo sub-title" (click)="goTologin()">Sign in</span>
+      </p>
+    </form>
+  </div>
+</div>

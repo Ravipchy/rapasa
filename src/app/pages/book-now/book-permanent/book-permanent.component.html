@@ -1,0 +1,87 @@
+<app-header headerTitle="Permanent Book Now" [isMenuVisible]="false" routerLink="/book-now"></app-header>
+
+<div class="ion-padding">
+  <!-- <div class="mx-5">
+    <img src="./assets/img/undraw_booking_re_gw4j 1.png" alt="" />
+  </div> -->
+  <form [formGroup]="PermanentForm" (ngSubmit)="submitForm()" novalidate>
+    <div class="ml-[-10px] mr-[10px] mt-6">
+      <ion-select class="Input-border w-full " formControlName="selectAddress" placeholder="Select Address">
+        <ion-select-option *ngFor="let selectAddress of Address" [value]="selectAddress">
+          {{selectAddress.name}}
+        </ion-select-option>
+      </ion-select>
+      <span class="error text-red-500 ion-padding" *ngIf="isSubmitted && errorControl.selectAddress.errors?.required">
+        Select Address is required.
+      </span>
+      <ion-select class="Input-border w-full " formControlName="selectCarType" placeholder="Select Car Type  ">
+        <ion-select-option *ngFor="let carType of carType" [value]="carType">
+          {{carType.name}}
+        </ion-select-option>
+      </ion-select>
+      <span class="error text-red-500 ion-padding" *ngIf="isSubmitted && errorControl.selectCarType.errors?.required">
+        Select Car Type is required.
+      </span>
+      <ion-select class="Input-border w-full " formControlName="selectDutyHours" placeholder="Select  Duty Hours">
+        <ion-select-option *ngFor="let dutyHour of dutyHour" [value]="dutyHour">
+          {{dutyHour.name}}
+        </ion-select-option>
+      </ion-select>
+      <span class="error text-red-500 ion-padding" *ngIf="isSubmitted && errorControl.selectDutyHours.errors?.required">
+        Select Duty Hours is required.
+      </span>
+      <ion-input type="tel" maxlength="2" class="Input-border" formControlName="noOfDrivers"
+        placeholder="No. of Driver’s "></ion-input>
+      <span class="error text-red-500 ion-padding" *ngIf="isSubmitted && errorControl.noOfDrivers.errors?.required">
+        No. of Driver’s is required.
+      </span>
+      <ion-select class="Input-border w-full " formControlName="selectMembershipPlan"
+        placeholder="Select  Membership Plan">
+        <ion-select-option *ngFor="let Plans of Plans" [value]="Plans">
+          {{Plans.duration}}
+        </ion-select-option>
+      </ion-select>
+      <span class="error text-red-500 ion-padding"
+        *ngIf="isSubmitted && errorControl.selectMembershipPlan.errors?.required">
+        Select Membership Plan is required.
+      </span>
+      <ion-input class="Input-border" formControlName="yearOfExperience" type="tel" maxlength="2"
+        placeholder="Year of Experience "></ion-input>
+      <span class="error text-red-500 ion-padding"
+        *ngIf="isSubmitted && errorControl.yearOfExperience.errors?.required">
+        Year of Experience is required.
+      </span>
+      <ion-input class="Input-border" formControlName="proposedSalary" placeholder="Proposed Salary "></ion-input>
+      <span class="error text-red-500 ion-padding" *ngIf="isSubmitted && errorControl.proposedSalary.errors?.required">
+        Proposed Salary is required.
+      </span>
+      <ion-input type="date" class="Input-border" (ionChange)="getDate($event)" [value]="defaultDate"
+        formControlName="expectedDate" placeholder="Expected Date ">
+      </ion-input>
+      <span class="error text-red-500 ion-padding" *ngIf="isSubmitted && errorControl.expectedDate.errors?.required">
+        Expected Date is required.
+      </span>
+      <ion-input class="Input-border" formControlName="comment" placeholder="Comment "></ion-input>
+      <span class="error text-red-500 ion-padding" *ngIf="isSubmitted && errorControl.comment.errors?.required">
+        Comment is required.
+      </span>
+      <ion-item class="w-full border mb-4 ml-2.5 border-black rounded-md">
+        <button expand="block" (click)="goToApplyCoupon()" class="bg-white text-black w-full text-[14px] text-left">
+          {{offerData.offerName?offerData.offerName:'APPLY COUPON'}}
+        </button>
+      </ion-item>
+    </div>
+    <ion-button type="submit" class="w-full my-2">
+      <span class="material-icons mr-2">check_circle</span>
+      Book
+    </ion-button>
+  </form>
+  <div class="flex">
+    <button type="submit" class="w-full my-2 bg-inqury items-center flex justify-center">
+      <span class="material-icons mr-2">info</span>
+      <span class="mt-1">INQUIRY</span>
+    </button>
+  </div>
+</div>
+
+<app-tab-navigator></app-tab-navigator>

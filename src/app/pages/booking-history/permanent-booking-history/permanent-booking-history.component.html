@@ -1,0 +1,248 @@
+<app-header headerTitle="Permanent Booking History" [isMenuVisible]="false" routerLink="/booking-history"></app-header>
+
+<div overflow-scroll="true">
+  <div class="p-1">
+    <ion-card class="bg-ondemand p-1 mt-4 text-black font-medium">
+      <div class="rounded-md bg-white p-2 mt-2 t-line">
+        <div class="h-8 justify-evenly flex mt-2">
+          <div class="flex items-center text-red">
+            <span class="m-1 text-blue-500 mr-[30px]" (click)="goToBookPermanent()">Booking Code</span>
+            <span class="ml-14">DII-B548851</span>
+          </div>
+        </div>
+      </div>
+      <div class="rounded-md bg-white mt-2.5  t-line">
+        <div class="h-35 flex text-center justify-evenly pt-2 mt-1.5 text-black font-medium">
+          <div class="mx-2">
+            <p>From Location</p>
+            <p class="">koregaon park pune</p>
+          </div>
+          <div class="vl3 "></div>
+          <div class="mx-2 ">
+            <p>From Date </p>
+            <p> Jan 6 2023,5.00 AM </p>
+          </div>
+        </div>
+      </div>
+      <ng-container>
+        <div class="stepper-wrapper t-line">
+          <div class="flex items-center justify-between mx-auto w-[300px]">
+            <div>
+              <div class="relative flex items-center flex-col py-5 justify-center text-center">
+                <div class="text-sm whitespace-nowrap font-semibold absolute -bottom-[0px] ml-8">On
+                  Process
+                </div>
+                <img src="./assets/icons/pending.svg" alt="">
+              </div>
+            </div>
+            <div class="h-[2px] bg-gray-400 flex-1"></div>
+            <div>
+              <div class="relative flex items-center flex-col py-5 justify-center text-center">
+                <div class="text-sm whitespace-nowrap font-semibold absolute -top-[1px]">Mapping Driver
+                </div>
+                <img src="./assets/icons/pending.svg" alt="">
+              </div>
+            </div>
+            <div class="h-[2px] bg-gray-400 flex-1"></div>
+            <div>
+              <div class="relative flex items-center flex-col py-5 justify-center text-center">
+                <div class="text-sm whitespace-nowrap font-semibold absolute -bottom-[0px]">Driver
+                  Confirmed
+                </div>
+                <img src="./assets/icons/pending.svg" alt="">
+              </div>
+            </div>
+            <div class="h-[2px] bg-gray-400 flex-1"></div>
+            <div>
+              <div class="relative flex items-center flex-col py-5 justify-center text-center">
+                <div class="text-sm whitespace-nowrap font-semibold absolute -top-[1px]">On the way
+                </div>
+                <img src="./assets/icons/pending.svg" alt="">
+              </div>
+            </div>
+            <div class="h-[2px] bg-gray-400 flex-1"></div>
+            <div>
+              <div class="relative flex items-center flex-col py-5 justify-center text-center">
+                <div class="text-sm whitespace-nowrap font-semibold absolute -bottom-[0px] mr-8	">
+                  Completed
+                </div>
+                <img src="./assets/icons/inprogress.svg" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+      <div class="flex items-center justify-center m-2">
+        <ion-button class="w-full" (click)=" presentAlert()">
+          <span class="material-icons mr-2">cancel</span>
+          cancel
+        </ion-button>
+      </div>
+
+    </ion-card>
+  </div>
+  <div class="	p-1">
+    <ion-card class="bg-ondemand p-1 mt-4 text-black font-medium">
+      <div class="rounded-md bg-white p-2 mt-2 t-line">
+        <div class="h-8 justify-evenly flex mt-2">
+          <div class="flex items-center">
+            <span class="m-1 text-blue-500 mr-[30px]" (click)="goToBookPermanent()">Booking Code</span>
+            <span class="ml-14">DII-B548851</span>
+          </div>
+        </div>
+      </div>
+      <div class="rounded-md bg-white mt-2.5  t-line">
+        <div class="h-35 flex text-center justify-evenly pt-2 mt-1.5 text-black font-medium">
+          <div class="mx-2">
+            <p>From Location</p>
+            <p class="">koregaon park pune</p>
+          </div>
+          <div class="vl3 "></div>
+          <div class="mx-2 ">
+            <p>From Date </p>
+            <p> Jan 6 2023,5.00 AM </p>
+          </div>
+        </div>
+      </div>
+      <ng-container>
+        <div class="stepper-wrapper t-line">
+          <div class="flex items-center justify-between mx-auto w-[300px]">
+            <div>
+              <div class="relative flex items-center flex-col py-5 justify-center text-center">
+                <div class="text-sm whitespace-nowrap font-semibold absolute -bottom-[0px] ml-8">On
+                  Process
+                </div>
+                <img src="./assets/icons/pending.svg" alt="">
+              </div>
+            </div>
+            <div class="h-[2px] bg-gray-400 flex-1"></div>
+            <div>
+              <div class="relative flex items-center flex-col py-5 justify-center text-center">
+                <div class="text-sm whitespace-nowrap font-semibold absolute -top-[1px]">Mapping Driver
+                </div>
+                <img src="./assets/icons/pending.svg" alt="">
+              </div>
+            </div>
+            <div class="h-[2px] bg-gray-400 flex-1"></div>
+            <div>
+              <div class="relative flex items-center flex-col py-5 justify-center text-center">
+                <div class="text-sm whitespace-nowrap font-semibold absolute -bottom-[0px]">Driver
+                  Confirmed
+                </div>
+                <img src="./assets/icons/pending.svg" alt="">
+              </div>
+            </div>
+            <div class="h-[2px] bg-gray-400 flex-1"></div>
+            <div>
+              <div class="relative flex items-center flex-col py-5 justify-center text-center">
+                <div class="text-sm whitespace-nowrap font-semibold absolute -top-[1px]">On the way
+                </div>
+                <img src="./assets/icons/pending.svg" alt="">
+              </div>
+            </div>
+            <div class="h-[2px] bg-gray-400 flex-1"></div>
+            <div>
+              <div class="relative flex items-center flex-col py-5 justify-center text-center">
+                <div class="text-sm whitespace-nowrap font-semibold absolute -bottom-[0px] mr-8	">
+                  Completed
+                </div>
+                <img src="./assets/icons/inprogress.svg" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+      <div class="flex items-center justify-center m-2">
+        <ion-button class="w-full" (click)=" presentAlert()">
+          <span class="material-icons mr-2">cancel</span>
+          cancel
+        </ion-button>
+      </div>
+
+    </ion-card>
+  </div>
+  <div class="p-1">
+    <ion-card class="bg-ondemand p-1 mt-4 text-black font-medium">
+      <div class="rounded-md bg-white p-2 mt-2 t-line">
+        <div class="h-8 justify-evenly flex mt-2">
+          <div class="flex items-center">
+            <span class="m-1 text-blue-500 mr-[30px]" (click)="goToBookPermanent()">Booking Code</span>
+            <span class="ml-14 ">DII-B548851</span>
+          </div>
+        </div>
+      </div>
+      <div class="rounded-md bg-white mt-2.5  t-line">
+        <div class="h-35 flex text-center justify-evenly pt-2 mt-1.5 text-black font-medium">
+          <div class="mx-2">
+            <p>From Location</p>
+            <p class="">koregaon park pune</p>
+          </div>
+          <div class="vl3 "></div>
+          <div class="mx-2 ">
+            <p>From Date </p>
+            <p> Jan 6 2023,5.00 AM </p>
+          </div>
+        </div>
+      </div>
+      <ng-container>
+        <div class="stepper-wrapper t-line">
+          <div class="flex items-center justify-between mx-auto w-[300px]">
+            <div>
+              <div class="relative flex items-center flex-col py-5 justify-center text-center">
+                <div class="text-sm whitespace-nowrap font-semibold absolute -bottom-[0px] ml-8">On
+                  Process
+                </div>
+                <img src="./assets/icons/pending.svg" alt="">
+              </div>
+            </div>
+            <div class="h-[2px] bg-gray-400 flex-1"></div>
+            <div>
+              <div class="relative flex items-center flex-col py-5 justify-center text-center">
+                <div class="text-sm whitespace-nowrap font-semibold absolute -top-[1px]">Mapping Driver
+                </div>
+                <img src="./assets/icons/pending.svg" alt="">
+              </div>
+            </div>
+            <div class="h-[2px] bg-gray-400 flex-1"></div>
+            <div>
+              <div class="relative flex items-center flex-col py-5 justify-center text-center">
+                <div class="text-sm whitespace-nowrap font-semibold absolute -bottom-[0px]">Driver
+                  Confirmed
+                </div>
+                <img src="./assets/icons/pending.svg" alt="">
+              </div>
+            </div>
+            <div class="h-[2px] bg-gray-400 flex-1"></div>
+            <div>
+              <div class="relative flex items-center flex-col py-5 justify-center text-center">
+                <div class="text-sm whitespace-nowrap font-semibold absolute -top-[1px]">On the way
+                </div>
+                <img src="./assets/icons/pending.svg" alt="">
+              </div>
+            </div>
+            <div class="h-[2px] bg-gray-400 flex-1"></div>
+            <div>
+              <div class="relative flex items-center flex-col py-5 justify-center text-center">
+                <div class="text-sm whitespace-nowrap font-semibold absolute -bottom-[0px] mr-8	">
+                  Completed
+                </div>
+                <img src="./assets/icons/inprogress.svg" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+      <div class="flex items-center justify-center m-2">
+        <ion-button class="w-full" (click)=" presentAlert()">
+          <span class="material-icons mr-2">cancel</span>
+          cancel
+        </ion-button>
+      </div>
+
+    </ion-card>
+  </div>
+</div>
+
+
+
+<app-tab-navigator></app-tab-navigator>

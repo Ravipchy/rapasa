@@ -1,0 +1,39 @@
+<app-header headerTitle="Book Now" [isMenuVisible]="false" routerLink="/dashboard"></app-header>
+<div class="p-4">
+  <!-- <div class="pt-4">
+    <img class="w-4/6 m-auto" src="./assets/img/ondemand-booking.svg" alt="" />
+        <ion-button class="btn flex justify-center pt-1" (click)="goToOndemand()">
+            Book On Demand
+        </ion-button>
+  </div>
+  <div class="pt-4">
+    <img class="w-4/6 m-auto" src="./assets/img/permanent.svg" alt="" />
+    <ion-button class="btn flex justify-center pt-1" (click)="goToPermanent()">
+      Book Permanent
+    </ion-button>
+  </div>
+</div> -->
+  <div class="pt-4 flex justify-between items-center">
+    <div class="m-0">
+      <img class="w-11/12 m-0" src="./assets/img/image 49.png" alt="" />
+    </div>
+    <div class="py-[25px] px-4 shadow-md border rounded-md bg-gray-700">
+      <button class="btn flex font-bold text-white justify-center pt-1" (click)="goToOndemand()">
+        Book
+        <br> OnDemand
+      </button>
+    </div>
+  </div>
+  <div class="border 5px solid black mt-5"></div>
+  <div class="pt-6 flex font-bold justify-between items-center">
+    <div>
+      <img class="w-11/12" src="./assets/img/undraw_trip_re_f724 2 (1).png" alt="" />
+    </div>
+    <div class="py-[25px] px-4 shadow-md border rounded-md bg-gray-700">
+      <button class="btn flex text-white justify-center pt-1" (click)="goToPermanent()">
+        Book Permanent
+      </button>
+    </div>
+  </div>
+</div>
+<app-tab-navigator></app-tab-navigator>

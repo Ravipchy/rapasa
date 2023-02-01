@@ -1,16 +1,23 @@
- 
+/*
+  Authors : bunchdevelopers (Rahul Jograna)
+  Website : https://bunchdevelopers.com/
+  App Name : ionic6Template Pack
+  This App Template Source code is licensed as per the
+  terms found in the Website https://bunchdevelopers.com/license
+  Copyright and Good Faith Purchasers © 2021-present bunchdevelopers.
+*/
 // Ionic Variables and Theming. For more info, please see:
 // http://ionicframework.com/docs/theming/
 
 /** Ionic CSS Variables **/
 :root {
   /** primary **/
-  --ion-color-primary: #F6515F;
+  --ion-color-primary: #000000;
   --ion-color-primary-rgb: 56, 128, 255;
   --ion-color-primary-contrast: #ffffff;
   --ion-color-primary-contrast-rgb: 255, 255, 255;
-  --ion-color-primary-shade: #3171e0;
-  --ion-color-primary-tint: #4c8dff;
+  --ion-color-primary-shade: #299461;
+  --ion-color-primary-tint: #89e5b9;
 
   /** secondary **/
   --ion-color-secondary: #3dc2ff;
@@ -46,7 +53,6 @@
 
   /** danger **/
   --ion-color-danger: #eb445a;
-
   --ion-color-danger-rgb: 235, 68, 90;
   --ion-color-danger-contrast: #ffffff;
   --ion-color-danger-contrast-rgb: 255, 255, 255;
@@ -76,4 +82,7 @@
   --ion-color-light-contrast-rgb: 0, 0, 0;
   --ion-color-light-shade: #d7d8da;
   --ion-color-light-tint: #f5f6f9;
+
+  --ion-color-Black: #3f4047;
+  --ion-color-gray: #e3e3e4;
 }

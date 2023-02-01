@@ -1,0 +1,77 @@
+<app-header headerTitle="Help & Support" [isMenuVisible]="false" routerLink="/profile"></app-header>  
+<div class="ion-padding">
+    <ion-label position="stacked">Contact Us</ion-label>
+    <ion-item lines="none border-solid border-2 border-black rounded mt-2">
+      <ion-textarea placeholder="Tell Us how we can help"  type="text"required></ion-textarea>
+    </ion-item>
+</div> 
+<div class="submit-btn  mr-2 ml-2 mb-6">
+    <ion-button type="submit" expand="block">Submit</ion-button>
+  </div>
+
+
+  <ion-label position="stacked pt-3 pl-3">Support Ticket</ion-label>
+
+  <ion-card class="bg-red-200	p-1 mt-4 text-black font-medium">
+    <div class="rounded-md bg-white pt-2.5 mt-0.5">
+        <div class="h-6 flex items-center mt-2">
+            <span class="m-2.5">Previous booking ID </span>
+            <span class="vl2"></span>
+            <span class="">DII-B682518</span><ion-icon (click)="goToHelpChat()"name="chevron-forward-circle-sharp"></ion-icon>
+        </div>
+        <hr class="w-80	ml-2 max-h-px mx-auto mt-4 bg-gray-500  dark:bg-gray-700">
+        <div class="h-20 flex items-center mt-1.5 text-black font-medium">
+            <span class="m-2.5">Booking Date<br> Pune
+                <br>Jan 3 2023, 10:00 AM
+            </span> <span class="vl3 "></span>
+            <span class="ml-6">End Location<br>Indore
+                <br> Jan 6 2023,2:00 PM
+            </span>
+        </div>
+
+    </div>
+  </ion-card>
+
+  <ion-card class="bg-red-200	p-1 mt-4 text-black font-medium">
+    <div class="rounded-md bg-white pt-2.5 mt-0.5">
+
+        <div class="h-6 flex items-center mt-2">
+            <span class="m-2.5">Previous booking ID </span>
+            <span class="vl2"></span>
+            <span class="">DII-B68251 <ion-icon (click)="goToHelpChat()"name="chevron-forward-circle-sharp"></ion-icon></span>
+        </div>
+        <hr class="w-80	ml-2 max-h-px mx-auto mt-4 bg-gray-500  dark:bg-gray-700">
+        <div class="h-20 flex items-center mt-1.5 text-black font-medium">
+            <span class="m-2.5">Booking Date<br> Pune
+                <br>Jan 3 2023, 10:00 AM
+            </span> <span class="vl3 "></span>
+            <span class="ml-6">End Location<br>Indore
+                <br> Jan 6 2023,2:00 PM
+            </span>
+        </div>
+    </div>
+  </ion-card>
+
+
+  <ion-card class="bg-red-200	p-1 mt-4 text-black font-medium">
+    <div class="rounded-md bg-white pt-2.5 mt-0.5">
+        <div class="h-6 flex items-center mt-2">
+            <span class="m-2.5">Previous booking ID </span>
+            <span class="vl2"></span>
+            <span class="">DII-B682518<ion-icon (click)="goToHelpChat()"name="chevron-forward-circle-sharp"></ion-icon></span>
+        </div>
+        <hr class="w-80	ml-2 max-h-px mx-auto mt-4 bg-gray-500  dark:bg-gray-700">
+        <div class="h-20 flex items-center mt-1.5 text-black font-medium">
+            <span class="m-2.5">Booking Date<br> Pune
+                <br>Jan 3 2023, 10:00 AM
+            </span> <span class="vl3 "></span>
+            <span class="ml-6">End Location<br>Indore
+                <br> Jan 6 2023,2:00 PM
+            </span>
+        </div>
+
+    </div>
+  </ion-card>
+
+  <router-outlet></router-outlet>
+<app-tab-navigator></app-tab-navigator>
